@@ -31,10 +31,10 @@ People who live or stay near Barefoot Bay, Micco, Sebastian, Palm Bay, Melbourne
 
 ## How to use it
 
-Two tabs:
+Two tabs (under the Lagoon title):
 
-- **60 miles** — the original Lagoon calendar: concerts, live rooms, street fairs, festivals, raves, and farmers markets inside the ring.
-- **House / EDM** — house music in Orlando (The Vanguard, Celine, Wall Street Plaza, House of Blues, Mango’s) plus any EDM inside 60 miles (Sanbar, Foo Bar, Sandbar Cocoa Beach, Debauchery). Orlando is the one exception to the radius, because that’s the drive for a real house room.
+- **60 miles** — concerts, live rooms, street fairs, festivals, and farmers markets inside the ring. **Raves / EDM** is the local electronic filter: Sanbar, Foo Bar, Sandbar Cocoa Beach, Debauchery, and anything else tagged house or rave within 60 miles.
+- **House / EDM** — Orlando only (The Vanguard, Celine, Wall Street Plaza, House of Blues, Mango’s, EDC at Tinker Field). This is the one exception to the radius.
 
 On either tab:
 

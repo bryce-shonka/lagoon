@@ -80,6 +80,10 @@ export function isLocalEvent(e: EventView): boolean {
   return e.distanceMiles <= HOME.radiusMiles + 0.5;
 }
 
+export function isOrlandoEvent(e: EventView): boolean {
+  return e.venue.city === "Orlando";
+}
+
 export type Filters = {
   feed: Feed;
   when: WhenFilter;
@@ -115,16 +119,23 @@ export function filterEvents(now: Date, filters: Filters): EventView[] {
   return EVENTS.filter((e) => {
     if (e.ymd < start || e.ymd > end) return false;
     if (edm) {
-      if (!isEdmEvent(e)) return false;
+      if (!isOrlandoEvent(e)) return false;
     } else if (!isLocalEvent(e)) {
       return false;
     }
-    if (cats && !cats.has(e.category)) return false;
+    if (cats && !categoryMatch(e, cats)) return false;
     if (cities && !cities.has(e.venue.city)) return false;
     if (saved && !saved.has(e.id)) return false;
     if (q && !e.searchHay.includes(q)) return false;
     return true;
   });
+}
+
+function categoryMatch(e: EventView, cats: Set<Category>): boolean {
+  if (cats.has(e.category)) return true;
+  // The Raves chip is the local (and Orlando) EDM net: house, rave, anything electronic.
+  if (cats.has("rave") && isEdmEvent(e)) return true;
+  return false;
 }
 
 export type DayGroup = {
@@ -183,7 +194,7 @@ export function cityChips(now: Date, feed: Feed): CityChip[] {
   for (const e of EVENTS) {
     if (e.ymd < today) continue;
     if (feed === "edm") {
-      if (!isEdmEvent(e)) continue;
+      if (!isOrlandoEvent(e)) continue;
     } else if (!isLocalEvent(e)) {
       continue;
     }

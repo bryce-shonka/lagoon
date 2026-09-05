@@ -1,12 +1,17 @@
 import { HOME } from "@/lib/geo";
-import type { Feed } from "@/lib/events/types";
+import { FEED_LABEL, type Feed } from "@/lib/events/types";
+import { useAppStore } from "@/lib/store";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   now: Date;
   feed: Feed;
 };
 
+const FEEDS: Feed[] = ["local", "edm"];
+
 export function AppHeader({ now, feed }: Props) {
+  const setFeed = useAppStore((s) => s.setFeed);
   const dateLabel = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
     weekday: "long",
@@ -17,16 +22,31 @@ export function AppHeader({ now, feed }: Props) {
   return (
     <header className="border-b border-border pb-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
+        <div className="min-w-0">
           <p className="text-xs font-medium uppercase tracking-widest text-subtle">
-            {feed === "edm" ? "Orlando · Space Coast" : "Space & Treasure Coast"}
+            {feed === "edm" ? "Orlando house rooms" : "Space & Treasure Coast"}
           </p>
           <h1 className="mt-1 font-display text-5xl italic leading-none text-fg md:text-6xl">
             Lagoon
           </h1>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {FEEDS.map((f) => (
+              <Button
+                key={f}
+                type="button"
+                variant={feed === f ? "chipOn" : "chip"}
+                size="pill"
+                className="touch-manipulation"
+                aria-pressed={feed === f}
+                onClick={() => setFeed(f)}
+              >
+                {FEED_LABEL[f]}
+              </Button>
+            ))}
+          </div>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
             {feed === "edm"
-              ? "House music in Orlando, and any EDM within 60 miles of Barefoot Bay. The rooms worth the drive."
+              ? "House and dance nights in Orlando — The Vanguard, Celine, Wall Street Plaza, House of Blues, Mango’s. The drive from Barefoot Bay."
               : `Concerts, live music, street festivals, raves, and farmers markets within ${HOME.radiusMiles} miles of ${HOME.name} (${HOME.zip}).`}
           </p>
         </div>

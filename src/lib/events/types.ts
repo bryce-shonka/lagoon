@@ -19,7 +19,7 @@ export const CATEGORY_LABEL: Record<Category, string> = {
   live: "Live music",
   festival: "Festivals",
   street: "Street fairs",
-  rave: "Raves",
+  rave: "Raves / EDM",
   market: "Farmers markets",
   house: "House",
 };
@@ -29,7 +29,7 @@ export const CATEGORY_LABEL_ONE: Record<Category, string> = {
   live: "Live music",
   festival: "Festival",
   street: "Street fair",
-  rave: "Rave",
+  rave: "Rave / EDM",
   market: "Farmers market",
   house: "House",
 };

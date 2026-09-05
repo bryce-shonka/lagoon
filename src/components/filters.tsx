@@ -5,11 +5,9 @@ import { Input } from "@/components/ui/input";
 import {
   CATEGORY_LABEL,
   EDM_CATEGORIES,
-  FEED_LABEL,
   LOCAL_CATEGORIES,
   WHEN_LABEL,
   type Category,
-  type Feed,
   type WhenFilter,
 } from "@/lib/events/types";
 import { formatMiles } from "@/lib/geo";
@@ -18,7 +16,6 @@ import { useAppStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
 const WHEN: WhenFilter[] = ["today", "weekend", "week", "all"];
-const FEEDS: Feed[] = ["local", "edm"];
 
 type Props = {
   cities: CityChip[];
@@ -27,7 +24,6 @@ type Props = {
 
 export function Filters({ cities, resultCount }: Props) {
   const feed = useAppStore((s) => s.feed);
-  const setFeed = useAppStore((s) => s.setFeed);
   const when = useAppStore((s) => s.when);
   const setWhen = useAppStore((s) => s.setWhen);
   const categories = useAppStore((s) => s.categories);
@@ -63,37 +59,6 @@ export function Filters({ cities, resultCount }: Props) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div
-        role="tablist"
-        aria-label="Listings"
-        className="grid grid-cols-2 gap-1 rounded-xl border border-border bg-surface p-1"
-      >
-        {FEEDS.map((f) => {
-          const on = feed === f;
-          return (
-            <button
-              key={f}
-              type="button"
-              role="tab"
-              aria-selected={on}
-              onClick={() => setFeed(f)}
-              className={cn(
-                "touch-manipulation h-11 rounded-lg px-3 text-sm font-medium",
-                on ? "bg-accent text-accent-fg" : "text-muted hover:text-fg",
-              )}
-            >
-              {FEED_LABEL[f]}
-            </button>
-          );
-        })}
-      </div>
-
-      {feed === "edm" ? (
-        <p className="text-xs leading-relaxed text-muted">
-          House rooms in Orlando, plus any EDM inside 60 miles of Barefoot Bay.
-        </p>
-      ) : null}
-
       <div className="flex gap-2">
         <label className="relative min-w-0 flex-1">
           <span className="sr-only">Search listings</span>
@@ -152,33 +117,39 @@ export function Filters({ cities, resultCount }: Props) {
         </div>
       </div>
 
-      <div>
-        <p className="mb-2 text-xs font-medium uppercase tracking-widest text-subtle">
-          Closest city
-        </p>
-        <div className="-mx-4 overflow-x-auto overscroll-x-contain px-4 pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:overflow-visible lg:px-0">
-          <div className="flex w-max gap-2 lg:w-auto lg:flex-wrap">
-            {cities.map((c) => {
-              const on = selectedCities.includes(c.city);
-              return (
-                <Button
-                  key={c.city}
-                  variant={on ? "chipOn" : "chip"}
-                  size="pill"
-                  className="shrink-0"
-                  onClick={() => toggleCity(c.city)}
-                  aria-pressed={on}
-                >
-                  <span>{c.city}</span>
-                  <span className={cn("tabular-nums", on ? "text-accent-fg/70" : "text-subtle")}>
-                    {formatMiles(c.miles)}
-                  </span>
-                </Button>
-              );
-            })}
+      {feed === "local" ? (
+        <div>
+          <p className="mb-2 text-xs font-medium uppercase tracking-widest text-subtle">
+            Closest city
+          </p>
+          <div className="-mx-4 overflow-x-auto overscroll-x-contain px-4 pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:overflow-visible lg:px-0">
+            <div className="flex w-max gap-2 lg:w-auto lg:flex-wrap">
+              {cities.map((c) => {
+                const on = selectedCities.includes(c.city);
+                return (
+                  <Button
+                    key={c.city}
+                    variant={on ? "chipOn" : "chip"}
+                    size="pill"
+                    className="shrink-0"
+                    onClick={() => toggleCity(c.city)}
+                    aria-pressed={on}
+                  >
+                    <span>{c.city}</span>
+                    <span className={cn("tabular-nums", on ? "text-accent-fg/70" : "text-subtle")}>
+                      {formatMiles(c.miles)}
+                    </span>
+                  </Button>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <p className="text-xs leading-relaxed text-muted">
+          Orlando only — about 70 miles from Barefoot Bay. Confirm with the room before you drive.
+        </p>
+      )}
 
       <div className="flex items-center justify-between gap-3 text-sm text-muted">
         <p>

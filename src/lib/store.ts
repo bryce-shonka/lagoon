@@ -79,7 +79,13 @@ export const useAppStore = create<AppState>()(
       savedOnly: false,
       savedIds: [],
       selectedId: null,
-      setFeed: (feed) => set({ feed, categories: [], cities: [] }),
+      setFeed: (feed) =>
+        set({
+          feed,
+          categories: [],
+          cities: [],
+          when: feed === "edm" ? "all" : "weekend",
+        }),
       setWhen: (when) => set({ when }),
       toggleCategory: (c) => {
         const cur = get().categories;
