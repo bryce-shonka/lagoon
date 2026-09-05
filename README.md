@@ -1,23 +1,61 @@
 # Lagoon
 
-Concerts, live music, street festivals, raves, and farmers markets within 60 miles of Barefoot Bay, Florida (32976).
+A local calendar for nights and mornings worth leaving the house for — concerts, live music, street festivals, raves, and farmers markets within **60 miles of Barefoot Bay, Florida (ZIP 32976)**.
 
-Filter by category, closest city, and date. Save listings on your device. Times are Eastern.
+The Space and Treasure Coasts are full of rooms and downtowns that don’t share a single listings page. You shouldn’t have to check The Moon Room, downtown Melbourne, Earl’s, Squid Lips, and a farmers-market Facebook post as five separate habits. Lagoon is that one page: what’s on, how far, and whether it’s tonight.
 
-## Run it
+## Why it exists
+
+Event discovery around 32976 is scattered. Ticket sites miss the free patio set. Downtown association calendars miss the Saturday rave. Market pages don’t mention the tribute show at Summer Crush. The result is a lot of driving past something you would have gone to.
+
+Lagoon’s job is narrow:
+
+1. **One radius.** Home is Barefoot Bay. Everything is measured in miles from there, capped at 60.
+2. **The nights people actually go out for.** Paid concerts (Moon Room at Pineapples in EGAD), standing live-music rooms, street fairs, festivals, EDM/rave nights, and weekend farmers markets.
+3. **Filters you can tap with a thumb.** Category, closest city, today / weekend / this week / all dates. Saved listings stay on the device — no account.
+
+It is not a ticket marketplace, a social network, or a live scrape of the internet. Listings are curated from venue calendars, downtown associations, and market schedules, then dated in Eastern Time. Always confirm with the venue before you drive.
+
+## What “good” looks like
+
+Two examples the app is built around:
+
+- **Street festivals in downtown Melbourne** — Riverview Park markets, village art walks, the kind of Saturday you park once and stay.
+- **Concerts at The Moon Room (EGAD)** — a real ticketed room at Pineapples, not a nameless “live music tonight” blurb.
+
+If those two keep showing up correctly, the rest of the calendar is doing its job.
+
+## Who it’s for
+
+People who live or stay near Barefoot Bay, Micco, Sebastian, Palm Bay, Melbourne, EGAD, the beaches, Vero, and the rest of the 60-mile ring — and would rather scroll one list than six venue sites before dinner.
+
+## How to use it
+
+- **When** defaults to this weekend. Today, this week, or the full calendar are one tap.
+- **Category** chips: Concerts, Live music, Festivals, Street fairs, Raves, Farmers markets. Combine them; empty means all.
+- **Closest city** is sorted by miles from Barefoot Bay (Sebastian first, then Palm Bay, Melbourne, and so on out to Stuart / Titusville).
+- Tap a listing for time, address, a short note, directions, and tickets or the venue page when there is one.
+- **Save** bookmarks a show on this browser. Saved is a filter, not an account.
+
+Featured at the top of the list is the strongest pick in the current window — a Moon Room night or a downtown festival when one is on.
+
+## What’s in the data
+
+Dated shows plus recurring weekly rooms and markets (Earl’s Hideaway, Squid Lips EGAD, Sanbar, Saturday markets, and so on). Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
+
+Cities in range include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
+
+## Run it locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the URL printed in the terminal. `npm run typecheck` and `npm run build` are available too.
+Open the URL printed in the terminal. `npm run typecheck` and `npm run build` are also available.
 
-## What’s in it
+Stack: TanStack Start, React, Tailwind CSS. Saved listings use local storage. No sign-in.
 
-- Weekend-first calendar of Space & Treasure Coast nights and markets
-- Clickable filters: concerts, live music, festivals, street fairs, raves, farmers markets, plus city
-- Featured pick (Moon Room / downtown Melbourne when they’re on)
-- Saved listings stored locally — no account
+## Honest limits
 
-Stack: TanStack Start, React, Tailwind CSS.
+Listings are a curated catalog, not a live feed. Rooms change bills; markets skip holiday weekends; a street fair can move a block. Treat Lagoon as the newspaper of local nights, then confirm with the venue.
