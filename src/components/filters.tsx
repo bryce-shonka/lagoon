@@ -2,13 +2,23 @@ import { useEffect, useState } from "react";
 import { Bookmark, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CATEGORIES, CATEGORY_LABEL, WHEN_LABEL, type WhenFilter } from "@/lib/events/types";
+import {
+  CATEGORY_LABEL,
+  EDM_CATEGORIES,
+  FEED_LABEL,
+  LOCAL_CATEGORIES,
+  WHEN_LABEL,
+  type Category,
+  type Feed,
+  type WhenFilter,
+} from "@/lib/events/types";
 import { formatMiles } from "@/lib/geo";
 import type { CityChip } from "@/lib/events/query";
 import { useAppStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
 const WHEN: WhenFilter[] = ["today", "weekend", "week", "all"];
+const FEEDS: Feed[] = ["local", "edm"];
 
 type Props = {
   cities: CityChip[];
@@ -16,6 +26,8 @@ type Props = {
 };
 
 export function Filters({ cities, resultCount }: Props) {
+  const feed = useAppStore((s) => s.feed);
+  const setFeed = useAppStore((s) => s.setFeed);
   const when = useAppStore((s) => s.when);
   const setWhen = useAppStore((s) => s.setWhen);
   const categories = useAppStore((s) => s.categories);
@@ -40,14 +52,48 @@ export function Filters({ cities, resultCount }: Props) {
   }, [draft, query, setQuery]);
 
   const dirty =
+    feed !== "local" ||
     when !== "weekend" ||
     categories.length > 0 ||
     selectedCities.length > 0 ||
     draft.length > 0 ||
     savedOnly;
 
+  const catList: readonly Category[] = feed === "edm" ? EDM_CATEGORIES : LOCAL_CATEGORIES;
+
   return (
     <div className="flex flex-col gap-4">
+      <div
+        role="tablist"
+        aria-label="Listings"
+        className="grid grid-cols-2 gap-1 rounded-xl border border-border bg-surface p-1"
+      >
+        {FEEDS.map((f) => {
+          const on = feed === f;
+          return (
+            <button
+              key={f}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              onClick={() => setFeed(f)}
+              className={cn(
+                "touch-manipulation h-11 rounded-lg px-3 text-sm font-medium",
+                on ? "bg-accent text-accent-fg" : "text-muted hover:text-fg",
+              )}
+            >
+              {FEED_LABEL[f]}
+            </button>
+          );
+        })}
+      </div>
+
+      {feed === "edm" ? (
+        <p className="text-xs leading-relaxed text-muted">
+          House rooms in Orlando, plus any EDM inside 60 miles of Barefoot Bay.
+        </p>
+      ) : null}
+
       <div className="flex gap-2">
         <label className="relative min-w-0 flex-1">
           <span className="sr-only">Search listings</span>
@@ -86,10 +132,10 @@ export function Filters({ cities, resultCount }: Props) {
 
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-widest text-subtle">
-          Category
+          {feed === "edm" ? "Style" : "Category"}
         </p>
         <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map((c) => {
+          {catList.map((c) => {
             const on = categories.includes(c);
             return (
               <Button

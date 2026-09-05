@@ -34,6 +34,7 @@ export function Featured({ event, now, onOpen }: Props) {
         {event.venue.name}
         {event.venue.neighborhood ? ` · ${event.venue.neighborhood}` : ""}
         {` · ${event.venue.city} · ${formatMiles(event.distanceMiles)}`}
+        {event.beyondRadius ? " · Orlando drive" : ""}
       </p>
       <p className="mt-4 max-w-prose text-sm leading-relaxed text-fg/85">{event.description}</p>
       <div className="mt-5">

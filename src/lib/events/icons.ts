@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { AudioLines, Disc3, Flag, Landmark, Music, ShoppingBasket } from "lucide-react";
+import { AudioLines, Disc, Disc3, Flag, Landmark, Music, ShoppingBasket } from "lucide-react";
 import type { Category } from "./types";
 
 export const CATEGORY_ICON: Record<Category, LucideIcon> = {
@@ -9,4 +9,5 @@ export const CATEGORY_ICON: Record<Category, LucideIcon> = {
   street: Landmark,
   rave: Disc3,
   market: ShoppingBasket,
+  house: Disc,
 };

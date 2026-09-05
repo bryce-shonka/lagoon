@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { createJSONStorage, persist, type StateStorage } from "zustand/middleware";
-import type { Category, WhenFilter } from "@/lib/events/types";
+import type { Category, Feed, WhenFilter } from "@/lib/events/types";
 
 function memoryStorage(): StateStorage {
   const map = new Map<string, string>();
@@ -49,6 +49,7 @@ function safeStorage(): StateStorage {
 }
 
 type AppState = {
+  feed: Feed;
   when: WhenFilter;
   categories: Category[];
   cities: string[];
@@ -56,6 +57,7 @@ type AppState = {
   savedOnly: boolean;
   savedIds: string[];
   selectedId: string | null;
+  setFeed: (feed: Feed) => void;
   setWhen: (when: WhenFilter) => void;
   toggleCategory: (c: Category) => void;
   toggleCity: (city: string) => void;
@@ -69,6 +71,7 @@ type AppState = {
 export const useAppStore = create<AppState>()(
   persist(
     (set, get) => ({
+      feed: "local",
       when: "weekend",
       categories: [],
       cities: [],
@@ -76,6 +79,7 @@ export const useAppStore = create<AppState>()(
       savedOnly: false,
       savedIds: [],
       selectedId: null,
+      setFeed: (feed) => set({ feed, categories: [], cities: [] }),
       setWhen: (when) => set({ when }),
       toggleCategory: (c) => {
         const cur = get().categories;
@@ -100,6 +104,7 @@ export const useAppStore = create<AppState>()(
       setSelectedId: (selectedId) => set({ selectedId }),
       clearFilters: () =>
         set({
+          feed: "local",
           when: "weekend",
           categories: [],
           cities: [],

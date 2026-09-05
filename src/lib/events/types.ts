@@ -5,9 +5,14 @@ export const CATEGORIES = [
   "street",
   "rave",
   "market",
+  "house",
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number];
+
+export const LOCAL_CATEGORIES = CATEGORIES.filter((c) => c !== "house");
+
+export const EDM_CATEGORIES = ["house", "rave"] as const;
 
 export const CATEGORY_LABEL: Record<Category, string> = {
   concert: "Concerts",
@@ -16,6 +21,7 @@ export const CATEGORY_LABEL: Record<Category, string> = {
   street: "Street fairs",
   rave: "Raves",
   market: "Farmers markets",
+  house: "House",
 };
 
 export const CATEGORY_LABEL_ONE: Record<Category, string> = {
@@ -25,6 +31,14 @@ export const CATEGORY_LABEL_ONE: Record<Category, string> = {
   street: "Street fair",
   rave: "Rave",
   market: "Farmers market",
+  house: "House",
+};
+
+export type Feed = "local" | "edm";
+
+export const FEED_LABEL: Record<Feed, string> = {
+  local: "60 miles",
+  edm: "House / EDM",
 };
 
 export type Venue = {
@@ -51,6 +65,7 @@ export type EventItem = {
   url?: string;
   ticketsUrl?: string;
   recurring?: boolean;
+  beyondRadius?: boolean;
 };
 
 export type EventView = EventItem & {

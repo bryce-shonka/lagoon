@@ -11,8 +11,8 @@ Event discovery around 32976 is scattered. Ticket sites miss the free patio set.
 Lagoon’s job is narrow:
 
 1. **One radius.** Home is Barefoot Bay. Everything is measured in miles from there, capped at 60.
-2. **The nights people actually go out for.** Paid concerts (Moon Room at Pineapples in EGAD), standing live-music rooms, street fairs, festivals, EDM/rave nights, and weekend farmers markets.
-3. **Filters you can tap with a thumb.** Category, closest city, today / weekend / this week / all dates. Saved listings stay on the device — no account.
+2. **The nights people actually go out for.** Paid concerts (Moon Room at Pineapples in EGAD), standing live-music rooms, street fairs, festivals, EDM/rave nights, weekend farmers markets, and — on the House / EDM tab — Orlando house rooms plus local raves.
+3. **Filters you can tap with a thumb.** Two tabs (60 miles vs House / EDM), then category, closest city, today / weekend / this week / all dates. Saved listings stay on the device — no account.
 
 It is not a ticket marketplace, a social network, or a live scrape of the internet. Listings are curated from venue calendars, downtown associations, and market schedules, then dated in Eastern Time. Always confirm with the venue before you drive.
 
@@ -31,19 +31,27 @@ People who live or stay near Barefoot Bay, Micco, Sebastian, Palm Bay, Melbourne
 
 ## How to use it
 
+Two tabs:
+
+- **60 miles** — the original Lagoon calendar: concerts, live rooms, street fairs, festivals, raves, and farmers markets inside the ring.
+- **House / EDM** — house music in Orlando (The Vanguard, Celine, Wall Street Plaza, House of Blues, Mango’s) plus any EDM inside 60 miles (Sanbar, Foo Bar, Sandbar Cocoa Beach, Debauchery). Orlando is the one exception to the radius, because that’s the drive for a real house room.
+
+On either tab:
+
 - **When** defaults to this weekend. Today, this week, or the full calendar are one tap.
-- **Category** chips: Concerts, Live music, Festivals, Street fairs, Raves, Farmers markets. Combine them; empty means all.
-- **Closest city** is sorted by miles from Barefoot Bay (Sebastian first, then Palm Bay, Melbourne, and so on out to Stuart / Titusville).
+- **Category** (or House / Raves on the EDM tab) chips combine; empty means all in that tab.
+- **Closest city** is sorted by miles from Barefoot Bay.
 - Tap a listing for time, address, a short note, directions, and tickets or the venue page when there is one.
 - **Save** bookmarks a show on this browser. Saved is a filter, not an account.
 
-Featured at the top of the list is the strongest pick in the current window — a Moon Room night or a downtown festival when one is on.
+Featured at the top of the list is the strongest pick in the current window — a Moon Room night or downtown festival on Local; an Orlando house bill or EDC week on House / EDM.
+
 
 ## What’s in the data
 
 Dated shows plus recurring weekly rooms and markets (Earl’s Hideaway, Squid Lips EGAD, Sanbar, Saturday markets, and so on). Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
 
-Cities in range include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
+Cities in range include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart. The House / EDM tab also lists Orlando (about 75 miles) for house rooms only.
 
 ## Run it locally
 

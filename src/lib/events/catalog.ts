@@ -741,6 +741,157 @@ const DATED: EventItem[] = [
     description:
       "Saturday open house at Green Gables, the 1896 riverview house on Harbor City Boulevard.",
   },
+  {
+    id: "vanguard-levelup-0905",
+    title: "Level Up",
+    subtitle: "The Vanguard",
+    category: "house",
+    start: iso("2026-09-05", "22:00"),
+    venueId: "vanguard",
+    price: "$25–50",
+    beyondRadius: true,
+    description:
+      "Saturday dance night at The Vanguard, the old Firestone building on Orange Avenue. Insomniac room, 18+. About 75 miles from Barefoot Bay — the Orlando drive locals actually make.",
+    url: "https://www.thevanguard.live",
+    ticketsUrl: "https://www.thevanguard.live",
+  },
+  {
+    id: "mangos-netics-0905",
+    title: "DJ NETICS",
+    subtitle: "House at Mango’s",
+    category: "house",
+    start: iso("2026-09-05", "22:00"),
+    venueId: "mangos",
+    price: "Cover",
+    beyondRadius: true,
+    description:
+      "Saturday house at Mango’s Tropical Café on International Drive. Four-on-the-floor, walk-in Orlando house night.",
+  },
+  {
+    id: "sandbar-cb-edm-0905",
+    title: "Beach rave night",
+    category: "rave",
+    start: iso("2026-09-05", "21:00"),
+    venueId: "sandbar-cb",
+    price: "Free",
+    description:
+      "EDM night at Sandbar Sports Grill on the Cocoa Beach causeway. Lasers, bass, rave wear encouraged. 21+ after 10. Inside the 60-mile ring.",
+  },
+  {
+    id: "hob-icey-0906",
+    title: "DJ Icey, DJ Magic Mike, DJ Craze, DJ Baby Anne",
+    subtitle: "Florida bass & house",
+    category: "house",
+    start: iso("2026-09-06", "19:00"),
+    venueId: "hob-orlando",
+    price: "Tickets",
+    beyondRadius: true,
+    description:
+      "Florida-bass and house history at House of Blues in Disney Springs: Icey, Magic Mike, Craze, and Baby Anne on one bill. The Orlando drive if you grew up on breaks.",
+    url: "https://www.houseofblues.com/orlando",
+  },
+  {
+    id: "celine-liltexas-0910",
+    title: "Lil Texas",
+    subtitle: "Celine",
+    category: "house",
+    start: iso("2026-09-10", "22:00"),
+    venueId: "celine",
+    price: "$25+",
+    beyondRadius: true,
+    description:
+      "Thursday at Celine on Magnolia: hard-edged dance in the downtown Orlando room that books house and techno most weeks.",
+    url: "https://celineorlando.com",
+  },
+  {
+    id: "wallst-mochakk-0912",
+    title: "Mochakk",
+    subtitle: "Wall Street Plaza",
+    category: "house",
+    start: iso("2026-09-12", "22:00"),
+    venueId: "wall-st",
+    price: "Tickets",
+    beyondRadius: true,
+    description:
+      "Brazilian house headliner Mochakk at Wall Street Plaza, the open-air downtown block. Peak-hour four-on-the-floor — the Orlando house booking of the month.",
+  },
+  {
+    id: "vanguard-snow-0915",
+    title: "Snow Strippers",
+    subtitle: "The Vanguard",
+    category: "house",
+    start: iso("2026-09-15", "19:00"),
+    venueId: "vanguard",
+    price: "Tickets",
+    beyondRadius: true,
+    description:
+      "Dance-electronic duo Snow Strippers at The Vanguard. Tuesday night, downtown Orlando, Insomniac room.",
+    url: "https://www.thevanguard.live",
+  },
+  {
+    id: "celine-elifur-0918",
+    title: "Eli & Fur",
+    subtitle: "Celine",
+    category: "house",
+    start: iso("2026-09-18", "22:00"),
+    venueId: "celine",
+    price: "$30+",
+    beyondRadius: true,
+    description:
+      "Melodic house from Eli & Fur at Celine. Friday night downtown — a clean Orlando house room, 95 north then the Beachline.",
+    url: "https://celineorlando.com",
+  },
+  {
+    id: "celine-goddard-1001",
+    title: "goddard.",
+    subtitle: "Celine",
+    category: "house",
+    start: iso("2026-10-01", "22:00"),
+    venueId: "celine",
+    price: "$25+",
+    beyondRadius: true,
+    description:
+      "UK garage and bass-house from goddard. at Celine on Magnolia. Thursday downtown Orlando.",
+    url: "https://celineorlando.com",
+  },
+  {
+    id: "vanguard-gilglaze-1105",
+    title: "Gil Glaze",
+    subtitle: "EDC week",
+    category: "house",
+    start: iso("2026-11-05", "22:00"),
+    venueId: "vanguard",
+    price: "Tickets",
+    beyondRadius: true,
+    description:
+      "House DJ Gil Glaze at The Vanguard the night before EDC Orlando. Downtown pre-party, 18+.",
+    url: "https://www.thevanguard.live",
+  },
+  {
+    id: "edc-orlando-1106",
+    title: "EDC Orlando",
+    subtitle: "Tinker Field · Nov 6–8",
+    category: "rave",
+    start: iso("2026-11-06", "13:00"),
+    end: iso("2026-11-08", "23:59"),
+    venueId: "tinker",
+    price: "$293–617",
+    beyondRadius: true,
+    description:
+      "Electric Daisy Carnival at Tinker Field, Nov 6–8. Steve Aoki, Kaskade, David Guetta, and 100+ more across house, techno, and bass. The Orlando drive of the year from the Space Coast. Confirm hours on the Insomniac site.",
+    url: "https://orlando.electricdaisycarnival.com",
+    ticketsUrl: "https://orlando.electricdaisycarnival.com",
+  },
+  {
+    id: "sunsquabi-1111",
+    title: "Sunsquabi",
+    category: "rave",
+    start: iso("2026-11-11", "17:00"),
+    venueId: "dirty-birds",
+    price: "Tickets",
+    description:
+      "Livetronic trio Sunsquabi at Dirty Birds in Cocoa Beach. Electronic, not a cover-band night — the beach-town EDM booking of the fall.",
+  },
 ];
 
 type RecurringSpec = {
@@ -757,6 +908,7 @@ type RecurringSpec = {
   price: string;
   description: string;
   url?: string;
+  beyondRadius?: boolean;
 };
 
 const RECURRING: RecurringSpec[] = [
@@ -1037,6 +1189,42 @@ const RECURRING: RecurringSpec[] = [
     description: "Saturday night in the taproom at Hell ’n Blazes on New Haven Avenue in downtown Melbourne.",
     url: "https://hellnblazesbrewing.com",
   },
+  {
+    id: "mangos-sat-house",
+    title: "Saturday house at Mango’s",
+    category: "house",
+    venueId: "mangos",
+    dow: 6,
+    startTime: "22:00",
+    price: "Cover",
+    skipIfVenueDay: true,
+    beyondRadius: true,
+    description:
+      "Weekly Saturday house at Mango’s Tropical Café on International Drive. Orlando — outside the 60-mile ring, listed because it’s a reliable house night.",
+  },
+  {
+    id: "sandbar-cb-edm-weekly",
+    title: "Saturday EDM at Sandbar",
+    category: "rave",
+    venueId: "sandbar-cb",
+    dow: 6,
+    startTime: "21:00",
+    price: "Free",
+    skipIfVenueDay: true,
+    description:
+      "Late Saturday EDM at Sandbar Sports Grill, Cocoa Beach. Beach-town rave, no ticket most weeks.",
+  },
+  {
+    id: "debauchery-fri-dj",
+    title: "Friday DJ night",
+    category: "rave",
+    venueId: "debauchery",
+    dow: 5,
+    startTime: "22:00",
+    price: "Cover",
+    skipIfVenueDay: true,
+    description: "Late Friday DJ sets at Debauchery on New Haven Avenue in downtown Melbourne.",
+  },
 ];
 
 const DATED_PREFIXES = new Set(
@@ -1069,6 +1257,7 @@ function expandRecurring(): EventItem[] {
         description: spec.description,
         url: spec.url,
         recurring: true,
+        beyondRadius: spec.beyondRadius,
       });
     }
     day = addDays(day, 1);
@@ -1080,7 +1269,7 @@ function toView(item: EventItem): EventView | null {
   const venue = VENUE_BY_ID[item.venueId];
   if (!venue) return null;
   const distanceMiles = haversineMiles(HOME.lat, HOME.lng, venue.lat, venue.lng);
-  if (distanceMiles > HOME.radiusMiles + 0.5) return null;
+  if (distanceMiles > HOME.radiusMiles + 0.5 && !item.beyondRadius) return null;
   const startMs = Date.parse(item.start);
   let endMs = item.end ? Date.parse(item.end) : startMs + 3 * 60 * 60 * 1000;
   if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) return null;
@@ -1093,7 +1282,7 @@ function toView(item: EventItem): EventView | null {
     endMs,
     ymd: item.start.slice(0, 10),
     searchHay:
-      `${item.title} ${item.subtitle ?? ""} ${venue.name} ${venue.city} ${venue.neighborhood ?? ""} ${item.description}`.toLowerCase(),
+      `${item.title} ${item.subtitle ?? ""} ${item.category} ${venue.name} ${venue.city} ${venue.neighborhood ?? ""} ${item.description}`.toLowerCase(),
   };
 }
 

@@ -52,7 +52,9 @@ export function EventCard({ event, now, onOpen }: Props) {
             {` · ${event.venue.city}`}
           </p>
           <p className="mt-0.5 text-xs tabular-nums text-subtle">
-            {formatMiles(event.distanceMiles)} from Barefoot Bay
+            {event.beyondRadius
+              ? `${formatMiles(event.distanceMiles)} · Orlando drive`
+              : `${formatMiles(event.distanceMiles)} from Barefoot Bay`}
           </p>
         </div>
       </button>

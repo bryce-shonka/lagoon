@@ -1,10 +1,12 @@
 import { HOME } from "@/lib/geo";
+import type { Feed } from "@/lib/events/types";
 
 type Props = {
   now: Date;
+  feed: Feed;
 };
 
-export function AppHeader({ now }: Props) {
+export function AppHeader({ now, feed }: Props) {
   const dateLabel = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
     weekday: "long",
@@ -17,14 +19,15 @@ export function AppHeader({ now }: Props) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-medium uppercase tracking-widest text-subtle">
-            Space & Treasure Coast
+            {feed === "edm" ? "Orlando · Space Coast" : "Space & Treasure Coast"}
           </p>
           <h1 className="mt-1 font-display text-5xl italic leading-none text-fg md:text-6xl">
             Lagoon
           </h1>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-            Concerts, live music, street festivals, raves, and farmers markets within{" "}
-            {HOME.radiusMiles} miles of {HOME.name} ({HOME.zip}).
+            {feed === "edm"
+              ? "House music in Orlando, and any EDM within 60 miles of Barefoot Bay. The rooms worth the drive."
+              : `Concerts, live music, street festivals, raves, and farmers markets within ${HOME.radiusMiles} miles of ${HOME.name} (${HOME.zip}).`}
           </p>
         </div>
         <p className="text-sm text-subtle">

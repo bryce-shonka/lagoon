@@ -20,6 +20,7 @@ export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
   const [now, setNow] = useState(() => new Date());
+  const feed = useAppStore((s) => s.feed);
   const when = useAppStore((s) => s.when);
   const categories = useAppStore((s) => s.categories);
   const cities = useAppStore((s) => s.cities);
@@ -53,6 +54,7 @@ function Home() {
   const events = useMemo(
     () =>
       filterEvents(now, {
+        feed,
         when,
         categories,
         cities,
@@ -60,7 +62,7 @@ function Home() {
         savedOnly,
         savedIds,
       }),
-    [now, when, categories, cities, query, savedOnly, savedIds],
+    [now, feed, when, categories, cities, query, savedOnly, savedIds],
   );
 
   const featured = useMemo(
@@ -68,14 +70,14 @@ function Home() {
     [events, now],
   );
   const grouped = useMemo(() => groupByDay(events), [events]);
-  const cityList = useMemo(() => cityChips(now), [now]);
+  const cityList = useMemo(() => cityChips(now, feed), [now, feed]);
   const selected = selectedId ? (EVENTS_BY_ID[selectedId] ?? null) : null;
 
   return (
     <main className="min-h-dvh bg-bg text-fg">
       <div className="mx-auto max-w-6xl px-4 py-8 md:px-8 md:py-10">
         <div className="rise-in">
-          <AppHeader now={now} />
+          <AppHeader now={now} feed={feed} />
         </div>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] lg:items-start">
@@ -94,8 +96,9 @@ function Home() {
               <div className="rounded-xl border border-border bg-surface p-6">
                 <h2 className="font-display text-2xl text-fg">Nothing in this window</h2>
                 <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted">
-                  No listings match the current filters. Reset, or try All dates for the full
-                  60-mile calendar.
+                  {feed === "edm"
+                    ? "No house or EDM matches the current filters. Try All dates, or reset to see Orlando house rooms and local raves."
+                    : "No listings match the current filters. Reset, or try All dates for the full 60-mile calendar."}
                 </p>
                 <button
                   type="button"
@@ -130,9 +133,9 @@ function Home() {
         </div>
 
         <footer className="mt-16 border-t border-border pt-6 text-xs leading-relaxed text-subtle">
-          Listings are curated from local venue calendars, downtown associations, and market
-          schedules within 60 miles of Barefoot Bay. Times Eastern. Always confirm with the
-          venue before you drive.
+          {feed === "edm"
+            ? "House / EDM lists Orlando house rooms (outside the 60-mile ring) plus any EDM inside it. Times Eastern. Always confirm with the venue before you drive."
+            : "Listings are curated from local venue calendars, downtown associations, and market schedules within 60 miles of Barefoot Bay. Times Eastern. Always confirm with the venue before you drive."}
         </footer>
       </div>
 
