@@ -9,11 +9,12 @@ import { useAppStore } from "@/lib/store";
 
 type Props = {
   event: EventView | null;
-  now: Date;
+  nowMs: number;
+  today: string;
   onClose: () => void;
 };
 
-export function EventDetail({ event, now, onClose }: Props) {
+export function EventDetail({ event, nowMs, today, onClose }: Props) {
   const shown = event;
   const saved = useAppStore((s) => (shown ? s.savedIds.includes(shown.id) : false));
   const toggleSaved = useAppStore((s) => s.toggleSaved);
@@ -48,14 +49,14 @@ export function EventDetail({ event, now, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="listing-title"
-        className="sheet-in absolute inset-x-0 bottom-0 mx-auto flex max-h-[92dvh] w-full max-w-xl flex-col rounded-t-xl border border-border bg-surface"
+        className="sheet-in absolute inset-x-0 bottom-0 mx-auto flex max-h-[92dvh] w-full max-w-xl flex-col rounded-t-xl border border-border bg-surface pb-safe"
       >
         <div className="mx-auto mt-3 h-1 w-10 shrink-0 rounded-full bg-border" />
         <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-5 pb-8 pt-4">
           <div className="mb-4 flex items-start justify-between gap-3">
             <p className="text-xs font-medium uppercase tracking-widest text-muted">
               {CATEGORY_LABEL_ONE[shown.category]}
-              {statusFor(shown, now) === "now" ? " · Happening now" : ""}
+              {statusFor(shown, nowMs, today) === "now" ? " · Happening now" : ""}
             </p>
             <button
               type="button"

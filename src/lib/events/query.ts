@@ -12,11 +12,6 @@ const ymdFmt = new Intl.DateTimeFormat("en-CA", {
   day: "2-digit",
 });
 
-const weekdayFmt = new Intl.DateTimeFormat("en-US", {
-  timeZone: EASTERN,
-  weekday: "short",
-});
-
 const timeFmt = new Intl.DateTimeFormat("en-US", {
   timeZone: EASTERN,
   hour: "numeric",
@@ -30,17 +25,24 @@ const dayLabelFmt = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
 });
 
-const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] as const;
 const dayLabelCache = new Map<string, string>();
 const EDM_SET = new Set<string>(EDM_CATEGORIES);
 
-export function easternYmd(d: Date): string {
-  return ymdFmt.format(d);
+let upcomingYmd = "";
+let upcoming: EventView[] = EVENTS;
+
+function upcomingFrom(ymd: string): EventView[] {
+  if (upcomingYmd === ymd) return upcoming;
+  let i = 0;
+  const n = EVENTS.length;
+  while (i < n && EVENTS[i].ymd < ymd) i++;
+  upcomingYmd = ymd;
+  upcoming = i === 0 ? EVENTS : EVENTS.slice(i);
+  return upcoming;
 }
 
-export function easternWeekday(d: Date): number {
-  const i = WEEKDAYS.indexOf(weekdayFmt.format(d) as (typeof WEEKDAYS)[number]);
-  return i < 0 ? 0 : i;
+export function easternYmd(d: Date): string {
+  return ymdFmt.format(d);
 }
 
 export function parseYmd(ymd: string): { y: number; m: number; d: number } {
@@ -54,17 +56,20 @@ function addYmd(ymd: string, days: number): string {
   return dt.toISOString().slice(0, 10);
 }
 
-export function weekendRange(now: Date): { start: string; end: string } {
-  const today = easternYmd(now);
-  const dow = easternWeekday(now);
+function weekdayFromYmd(ymd: string): number {
+  const { y, m, d } = parseYmd(ymd);
+  return new Date(Date.UTC(y, m - 1, d)).getUTCDay();
+}
+
+export function weekendRange(today: string): { start: string; end: string } {
+  const dow = weekdayFromYmd(today);
   if (dow === 6) return { start: today, end: addYmd(today, 1) };
   if (dow === 0) return { start: today, end: today };
   const toSat = 6 - dow;
   return { start: addYmd(today, toSat), end: addYmd(today, toSat + 1) };
 }
 
-export function weekRange(now: Date): { start: string; end: string } {
-  const today = easternYmd(now);
+export function weekRange(today: string): { start: string; end: string } {
   return { start: today, end: addYmd(today, 6) };
 }
 
@@ -94,18 +99,17 @@ export type Filters = {
   savedIds: string[];
 };
 
-export function filterEvents(now: Date, filters: Filters): EventView[] {
-  const today = easternYmd(now);
+export function filterEvents(today: string, filters: Filters): EventView[] {
   let start = today;
   let end = "9999-12-31";
   if (filters.when === "today") {
     end = today;
   } else if (filters.when === "weekend") {
-    const r = weekendRange(now);
+    const r = weekendRange(today);
     start = r.start;
     end = r.end;
   } else if (filters.when === "week") {
-    const r = weekRange(now);
+    const r = weekRange(today);
     start = r.start;
     end = r.end;
   }
@@ -115,9 +119,10 @@ export function filterEvents(now: Date, filters: Filters): EventView[] {
   const cities = filters.cities.length ? new Set(filters.cities) : null;
   const saved = filters.savedOnly ? new Set(filters.savedIds) : null;
   const edm = filters.feed === "edm";
+  const list = upcomingFrom(start);
 
-  return EVENTS.filter((e) => {
-    if (e.ymd < start || e.ymd > end) return false;
+  return list.filter((e) => {
+    if (e.ymd > end) return false;
     if (edm) {
       if (!isOrlandoEvent(e)) return false;
     } else if (!isLocalEvent(e)) {
@@ -185,14 +190,12 @@ export type CityChip = {
 
 const cityChipCache = new Map<string, CityChip[]>();
 
-export function cityChips(now: Date, feed: Feed): CityChip[] {
-  const today = easternYmd(now);
+export function cityChips(today: string, feed: Feed): CityChip[] {
   const key = `${today}|${feed}`;
   const hit = cityChipCache.get(key);
   if (hit) return hit;
   const map = new Map<string, CityChip>();
-  for (const e of EVENTS) {
-    if (e.ymd < today) continue;
+  for (const e of upcomingFrom(today)) {
     if (feed === "edm") {
       if (!isOrlandoEvent(e)) continue;
     } else if (!isLocalEvent(e)) {
@@ -217,10 +220,13 @@ export function cityChips(now: Date, feed: Feed): CityChip[] {
   return chips;
 }
 
-export function statusFor(event: EventView, now: Date): "now" | "today" | "later" {
-  const n = now.getTime();
-  if (n >= event.startMs && n <= event.endMs) return "now";
-  if (event.ymd === easternYmd(now)) return "today";
+export function statusFor(
+  event: EventView,
+  nowMs: number,
+  today: string,
+): "now" | "today" | "later" {
+  if (nowMs >= event.startMs && nowMs <= event.endMs) return "now";
+  if (event.ymd === today) return "today";
   return "later";
 }
 

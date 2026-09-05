@@ -1,23 +1,18 @@
 import { HOME } from "@/lib/geo";
 import { FEED_LABEL, type Feed } from "@/lib/events/types";
+import { formatDayLabel } from "@/lib/events/query";
 import { useAppStore } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 
 type Props = {
-  now: Date;
+  today: string;
   feed: Feed;
 };
 
 const FEEDS: Feed[] = ["local", "edm"];
 
-export function AppHeader({ now, feed }: Props) {
+export function AppHeader({ today, feed }: Props) {
   const setFeed = useAppStore((s) => s.setFeed);
-  const dateLabel = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/New_York",
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  }).format(now);
 
   return (
     <header className="border-b border-border pb-6">
@@ -51,7 +46,7 @@ export function AppHeader({ now, feed }: Props) {
           </p>
         </div>
         <p className="text-sm text-subtle">
-          <span className="block text-fg">{dateLabel}</span>
+          <span className="block text-fg">{formatDayLabel(today)}</span>
           Times in Eastern · {HOME.zip}
         </p>
       </div>

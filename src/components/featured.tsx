@@ -8,13 +8,14 @@ import type { EventView } from "@/lib/events/types";
 
 type Props = {
   event: EventView;
-  now: Date;
+  nowMs: number;
+  today: string;
   onOpen: (id: string) => void;
 };
 
-export function Featured({ event, now, onOpen }: Props) {
+export function Featured({ event, nowMs, today, onOpen }: Props) {
   const Icon = CATEGORY_ICON[event.category];
-  const live = statusFor(event, now) === "now";
+  const live = statusFor(event, nowMs, today) === "now";
 
   return (
     <article className="rounded-xl border border-border bg-surface p-4">

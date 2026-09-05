@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import { CATEGORY_LABEL_ONE } from "@/lib/events/types";
 import { CATEGORY_ICON } from "@/lib/events/icons";
@@ -9,14 +10,15 @@ import { cn } from "@/lib/utils";
 
 type Props = {
   event: EventView;
-  now: Date;
+  nowMs: number;
+  today: string;
   onOpen: (id: string) => void;
 };
 
-export function EventCard({ event, now, onOpen }: Props) {
+export const EventCard = memo(function EventCard({ event, nowMs, today, onOpen }: Props) {
   const saved = useAppStore((s) => s.savedIds.includes(event.id));
   const toggleSaved = useAppStore((s) => s.toggleSaved);
-  const status = statusFor(event, now);
+  const status = statusFor(event, nowMs, today);
   const Icon = CATEGORY_ICON[event.category];
 
   return (
@@ -64,7 +66,7 @@ export function EventCard({ event, now, onOpen }: Props) {
         aria-pressed={saved}
         aria-label={saved ? "Remove saved listing" : "Save listing"}
         className={cn(
-          "flex size-11 shrink-0 items-center justify-center rounded-md text-muted hover:bg-surface-2 hover:text-fg",
+          "flex size-11 shrink-0 touch-manipulation items-center justify-center rounded-md text-muted hover:bg-surface-2 hover:text-fg",
           saved && "text-fg",
         )}
       >
@@ -72,4 +74,4 @@ export function EventCard({ event, now, onOpen }: Props) {
       </button>
     </div>
   );
-}
+});

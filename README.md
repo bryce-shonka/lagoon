@@ -72,6 +72,10 @@ Open the URL printed in the terminal. `npm run typecheck` and `npm run build` ar
 
 Stack: TanStack Start, React, Tailwind CSS. Saved listings use local storage. No sign-in.
 
+## On iPhone and iPad
+
+Built for the phone and the iPad preview: home-indicator and notch insets, 44px controls, no pinch-zoom on the search field, and a Home Screen icon via the share sheet (Add to Home Screen). Scroll stays on the page when you open a listing. Always confirm times with the venue before you drive.
+
 ## Honest limits
 
 Listings are a curated catalog, not a live feed. Rooms change bills; markets skip holiday weekends; a street fair can move a block. Treat Lagoon as the newspaper of local nights, then confirm with the venue.

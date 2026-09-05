@@ -9,7 +9,10 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, viewport-fit=cover",
+      },
       { title: APP_NAME },
       {
         name: "description",
@@ -17,6 +20,12 @@ export const Route = createRootRoute({
           "Live music, street festivals, raves, and farmers markets within 60 miles of Barefoot Bay, Florida (32976).",
       },
       { name: "theme-color", content: "#0c1110" },
+      { name: "color-scheme", content: "dark" },
+      { name: "format-detection", content: "telephone=no" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: APP_NAME },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
