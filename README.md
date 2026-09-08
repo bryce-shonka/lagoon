@@ -56,7 +56,7 @@ Featured at the top is the strongest pick in the current window — a Moon Room 
 
 ## What’s in the data
 
-Dated shows plus recurring weekly rooms and markets (Earl’s Hideaway, Squid Lips EGAD, Sanbar Saturday EDM, Saturday markets, and so on). Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
+Dated shows plus recurring weekly rooms and markets (Captain Hiram’s Sandbar, Tiki Bar & Grill, Earl’s Hideaway, Squid Lips EGAD, Sanbar Saturday EDM, Saturday markets, and so on). Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
 
 **60 miles** cities include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
 
