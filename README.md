@@ -1,34 +1,35 @@
 # Lagoon
 
-A local calendar for nights and mornings worth leaving the house for — concerts, live music, street festivals, raves, and farmers markets within **60 miles of Barefoot Bay, Florida (ZIP 32976)** — plus a separate **House / EDM** list of Orlando dance rooms, the one drive outside that ring.
+A local calendar for nights and mornings worth leaving the house for — concerts, live music, street festivals, raves, and farmers markets within **60 miles of Barefoot Bay, Florida (ZIP 32976)** — plus two drives outside that ring: **House / EDM** (Orlando) and **Miami** (Club Space and downtown house rooms).
 
-The Space and Treasure Coasts are full of rooms and downtowns that don’t share a single listings page. You shouldn’t have to check The Moon Room, downtown Melbourne, Earl’s, Squid Lips, and a farmers-market Facebook post as five separate habits. Lagoon is that one page: what’s on, how far, and whether it’s tonight.
+The Space and Treasure Coasts are full of rooms and downtowns that don’t share a single listings page. You shouldn’t have to check The Moon Room, downtown Melbourne, Captain Hiram’s, Earl’s, Tiki Bar & Grill, and a farmers-market Facebook post as six separate habits. Lagoon is that one page: what’s on, how far, and whether it’s tonight.
 
 ## Why it exists
 
-Event discovery around 32976 is scattered. Ticket sites miss the free patio set. Downtown association calendars miss the Saturday rave. Market pages don’t mention the tribute show at Summer Crush. House in Orlando lives on a different set of sites entirely. The result is a lot of driving past something you would have gone to.
+Event discovery around 32976 is scattered. Ticket sites miss the free patio set. Downtown association calendars miss the Saturday rave. Market pages don’t mention the tribute show at Summer Crush. House in Orlando and Miami lives on a different set of sites entirely. The result is a lot of driving past something you would have gone to.
 
 Lagoon’s job is narrow:
 
-1. **One radius, one exception.** Home is Barefoot Bay. The main calendar is capped at 60 miles. **House / EDM** is Orlando only (~70 miles) — the drive for a real house room.
-2. **The nights people actually go out for.** Paid concerts (Moon Room at Pineapples in EGAD), standing live-music rooms, street fairs, festivals, local EDM, weekend farmers markets, and Orlando house bills.
-3. **Filters you can tap with a thumb.** Two tabs under the title (**60 miles** vs **House / EDM**), then date, category, and closest city. **Raves / EDM** on the local tab is the 60-mile electronic net. Saved listings stay on the device — no account.
+1. **One radius, two exceptions.** Home is Barefoot Bay. The main calendar is capped at 60 miles. **House / EDM** is Orlando only (~70 miles). **Miami** is Club Space and the downtown rooms (~170 miles) — the trip for a real terrace night.
+2. **The nights people actually go out for.** Paid concerts (Moon Room at Pineapples in EGAD), standing live-music rooms on the Sebastian river (Hiram’s, Tiki, Earl’s), street fairs, festivals, local EDM, weekend farmers markets, Orlando house bills, and Miami terrace nights.
+3. **Filters you can tap with a thumb.** Three tabs under the title, then date, category, and closest city. **Raves / EDM** on the local tab is the 60-mile electronic net. Saved listings stay on the device — no account.
 
 It is not a ticket marketplace, a social network, or a live scrape of the internet. Listings are curated from venue calendars, downtown associations, and market schedules, then dated in Eastern Time. Always confirm with the venue before you drive.
 
 ## What “good” looks like
 
-Three examples the app is built around:
+Four examples the app is built around:
 
 - **Street festivals in downtown Melbourne** — Riverview Park markets, village art walks, the kind of Saturday you park once and stay.
 - **Concerts at The Moon Room (EGAD)** — a real ticketed room at Pineapples, not a nameless “live music tonight” blurb.
-- **House in Orlando** — The Vanguard, Celine, Wall Street Plaza, House of Blues, Mango’s, EDC at Tinker Field. Not mixed into the 60-mile list.
+- **Sebastian river live** — Captain Hiram’s Sandbar, Tiki Bar & Grill, and Earl’s Hideaway on Indian River Drive.
+- **House in Orlando and Miami** — The Vanguard / Celine in Orlando; Club Space terrace (and Floyd / The Ground) in Miami. Not mixed into the 60-mile list.
 
 If those keep showing up on the right tab, the calendar is doing its job.
 
 ## Who it’s for
 
-People who live or stay near Barefoot Bay, Micco, Sebastian, Palm Bay, Melbourne, EGAD, the beaches, Vero, and the rest of the 60-mile ring — and who will also drive to Orlando or Miami for a house night.
+People who live or stay near Barefoot Bay, Micco, Sebastian, Palm Bay, Melbourne, EGAD, the beaches, Vero, and the rest of the 60-mile ring — and who will also drive to Orlando or fly/drive to Miami for a house night.
 
 ## How to use it
 
@@ -48,21 +49,44 @@ On any tab:
 
 - **When** — today, weekend (Friday–Sunday), this week, or all dates.
 - **Category** chips combine; empty means all in that tab.
-- **Closest city** (60 miles only) is sorted by miles from Barefoot Bay.
-- Tap a listing for time, address, a short note, directions, and tickets or the venue page when there is one.
-- **Save** bookmarks a show on this browser. Saved is a filter, not an account.
+- **Closest city** (60 miles only) is sorted by miles from Barefoot Bay. Sebastian includes Hiram’s, Tiki, Earl’s, and Squid Lips river.
+- Tap a listing for time, address, age policy, a short note, directions, and tickets or the venue page when there is one.
+- **Save** bookmarks a show on this browser. Saved is a filter, not an account. Phone and iPad do not share saves.
 
 Featured at the top is the strongest pick in the current window — a Moon Room night or downtown festival on **60 miles**; an Orlando house bill on **House / EDM**; Club Space on **Miami**.
 
+### Markers
+
+- **Now** (pulsing dot) — the set is in progress, after start and before listed end. Space all-nighters can stay **Now** into the next afternoon. It is not “up next.”
+- **18+** / **All ages** on the card — the room is not 21+. Club Space, Floyd, The Ground, and E11EVEN stay 21+ (shown when you open the listing). ZeyZey, Factory Town, The Vanguard, Celine, and EDC are 18+. Markets and street fairs are all ages.
+- Distance — miles from Barefoot Bay, or “Orlando drive” / “Miami drive” on the exception tabs.
+
 ## What’s in the data
 
-Dated shows plus recurring weekly rooms and markets (Captain Hiram’s Sandbar, Tiki Bar & Grill, Earl’s Hideaway, Squid Lips EGAD, Sanbar Saturday EDM, Saturday markets, and so on). Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
+Dated shows plus recurring weekly rooms and markets. Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
 
 **60 miles** cities include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
 
+Sebastian river rooms: Captain Hiram’s Sandbar (1606 Indian River Dr), Tiki Bar & Grill (1130 Indian River Dr), Earl’s Hideaway, Squid Lips Sebastian.
+
 **House / EDM** venues: The Vanguard, Celine, Wall Street Plaza, House of Blues Orlando (Disney Springs), Mango’s Tropical Café (International Drive), Tinker Field (EDC Orlando).
 
-**Miami** venues: Club Space (Terrace), The Ground at Club Space, Floyd, E11EVEN, ZeyZey, Jungle Island, Factory Town. Distance is shown as a Miami drive.
+**Miami** venues: Club Space (Terrace), The Ground at Club Space, Floyd, E11EVEN, ZeyZey, Jungle Island, Factory Town.
+
+## How updates work
+
+This GitHub repo is the code backup. It does **not** update the live app on your phone.
+
+1. Ask for a change in the Grok conversation that built Lagoon.
+2. Check the preview.
+3. Click **Publish** (Publish changes) so the Home Screen / grok.me app picks it up.
+4. Pull to refresh or close and reopen Lagoon on the iPhone and iPad.
+
+Saves on a device stay on that device through a publish.
+
+## On iPhone and iPad
+
+Open the published Lagoon URL in **Safari**, then Share → **Add to Home Screen**. Notch and home-indicator spacing, 44px controls, no pinch-zoom on search. Scroll stays put when you open a listing.
 
 ## Run it locally
 
@@ -74,10 +98,6 @@ npm run dev
 Open the URL printed in the terminal. `npm run typecheck` and `npm run build` are also available.
 
 Stack: TanStack Start, React, Tailwind CSS. Saved listings use local storage. No sign-in.
-
-## On iPhone and iPad
-
-Built for the phone and the iPad preview: home-indicator and notch insets, 44px controls, no pinch-zoom on the search field, and a Home Screen icon via the share sheet (Add to Home Screen). Scroll stays on the page when you open a listing. Always confirm times with the venue before you drive.
 
 ## Honest limits
 
