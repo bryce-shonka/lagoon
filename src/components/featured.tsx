@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CATEGORY_LABEL_ONE } from "@/lib/events/types";
+import { CATEGORY_LABEL_ONE, ageExceptionLabel } from "@/lib/events/types";
 import { CATEGORY_ICON } from "@/lib/events/icons";
 import { formatDayLabel, formatTimeRange, statusFor } from "@/lib/events/query";
 import { formatMiles } from "@/lib/geo";
@@ -16,6 +16,7 @@ type Props = {
 export function Featured({ event, nowMs, today, onOpen }: Props) {
   const Icon = CATEGORY_ICON[event.category];
   const live = statusFor(event, nowMs, today) === "now";
+  const ageNote = ageExceptionLabel(event.age);
 
   return (
     <article className="rounded-xl border border-border bg-surface p-4">
@@ -24,6 +25,12 @@ export function Featured({ event, nowMs, today, onOpen }: Props) {
         {live ? "Happening now" : "Up next"}
         <span className="text-subtle">·</span>
         {CATEGORY_LABEL_ONE[event.category]}
+        {ageNote ? (
+          <>
+            <span className="text-subtle">·</span>
+            {ageNote}
+          </>
+        ) : null}
       </p>
       <h2 className="font-display text-3xl leading-tight break-words text-fg md:text-4xl">{event.title}</h2>
       {event.subtitle ? <p className="mt-1 text-base text-muted">{event.subtitle}</p> : null}

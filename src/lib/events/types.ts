@@ -42,6 +42,20 @@ export const FEED_LABEL: Record<Feed, string> = {
   miami: "Miami",
 };
 
+export type AgePolicy = "21+" | "18+" | "all";
+
+export const AGE_LABEL: Record<AgePolicy, string> = {
+  "21+": "21+",
+  "18+": "18+",
+  all: "All ages",
+};
+
+/** Card/featured badge: only the exceptions to a 21+ room. */
+export function ageExceptionLabel(age?: AgePolicy): string | null {
+  if (age === "18+" || age === "all") return AGE_LABEL[age];
+  return null;
+}
+
 export type Venue = {
   id: string;
   name: string;
@@ -51,6 +65,7 @@ export type Venue = {
   lng: number;
   url?: string;
   neighborhood?: string;
+  age?: AgePolicy;
 };
 
 export type EventItem = {
@@ -67,6 +82,7 @@ export type EventItem = {
   ticketsUrl?: string;
   recurring?: boolean;
   beyondRadius?: boolean;
+  age?: AgePolicy;
 };
 
 export type EventView = EventItem & {

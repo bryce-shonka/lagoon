@@ -1,5 +1,5 @@
 import { HOME, haversineMiles } from "@/lib/geo";
-import type { Category, EventItem, EventView } from "./types";
+import type { AgePolicy, Category, EventItem, EventView, Venue } from "./types";
 import { VENUE_BY_ID } from "./venues";
 
 function offsetFor(ymd: string): "-04:00" | "-05:00" {
@@ -1118,6 +1118,7 @@ type RecurringSpec = {
   description: string;
   url?: string;
   beyondRadius?: boolean;
+  age?: AgePolicy;
 };
 
 const RECURRING: RecurringSpec[] = [
@@ -1467,11 +1468,20 @@ function expandRecurring(): EventItem[] {
         url: spec.url,
         recurring: true,
         beyondRadius: spec.beyondRadius,
+        age: spec.age,
       });
     }
     day = addDays(day, 1);
   }
   return out;
+}
+
+function resolveAge(item: EventItem, venue: Venue): AgePolicy | undefined {
+  if (item.age) return item.age;
+  if (venue.age) return venue.age;
+  if (item.category === "market" || item.category === "street") return "all";
+  if (item.category === "house" || item.category === "rave") return "21+";
+  return undefined;
 }
 
 function toView(item: EventItem): EventView | null {
@@ -1483,6 +1493,7 @@ function toView(item: EventItem): EventView | null {
   let endMs = item.end ? Date.parse(item.end) : startMs + 3 * 60 * 60 * 1000;
   if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) return null;
   if (endMs < startMs) endMs = startMs + 3 * 60 * 60 * 1000;
+  const age = resolveAge(item, venue);
   return {
     ...item,
     venue,
@@ -1490,8 +1501,9 @@ function toView(item: EventItem): EventView | null {
     startMs,
     endMs,
     ymd: item.start.slice(0, 10),
+    age,
     searchHay:
-      `${item.title} ${item.subtitle ?? ""} ${item.category} ${venue.name} ${venue.city} ${venue.neighborhood ?? ""} ${item.description}`.toLowerCase(),
+      `${item.title} ${item.subtitle ?? ""} ${item.category} ${venue.name} ${venue.city} ${venue.neighborhood ?? ""} ${item.description} ${age ?? ""}`.toLowerCase(),
   };
 }
 

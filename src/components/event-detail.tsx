@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Bookmark, BookmarkCheck, MapPin, Ticket, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CATEGORY_LABEL_ONE } from "@/lib/events/types";
+import { CATEGORY_LABEL_ONE, AGE_LABEL } from "@/lib/events/types";
 import { formatDayLabel, formatTimeRange, statusFor } from "@/lib/events/query";
 import { formatMiles, mapsUrl } from "@/lib/geo";
 import type { EventView } from "@/lib/events/types";
@@ -88,7 +88,10 @@ export function EventDetail({ event, nowMs, today, onClose }: Props) {
           <p className="mt-5 max-w-prose text-base leading-relaxed text-fg/90">
             {shown.description}
           </p>
-          <p className="mt-4 text-sm text-muted">{shown.price}</p>
+          <p className="mt-4 text-sm text-muted">
+            {shown.price}
+            {shown.age ? ` · ${AGE_LABEL[shown.age]}` : ""}
+          </p>
           <p className="mt-1 flex items-start gap-2 text-sm text-muted">
             <MapPin className="mt-0.5 size-4 shrink-0" />
             <span>{shown.venue.address}</span>

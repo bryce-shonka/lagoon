@@ -10,6 +10,7 @@ export const VENUES: Venue[] = [
     lat: 28.1325,
     lng: -80.6309,
     url: "https://pineapplesegad.com",
+    age: "21+",
   },
   {
     id: "king-center",
@@ -477,6 +478,7 @@ export const VENUES: Venue[] = [
     lat: 28.5489,
     lng: -81.3796,
     url: "https://www.thevanguard.live",
+    age: "18+",
   },
   {
     id: "celine",
@@ -487,6 +489,7 @@ export const VENUES: Venue[] = [
     lat: 28.5415,
     lng: -81.3792,
     url: "https://celineorlando.com",
+    age: "18+",
   },
   {
     id: "hob-orlando",
@@ -525,6 +528,7 @@ export const VENUES: Venue[] = [
     lat: 28.5383,
     lng: -81.3897,
     url: "https://orlando.electricdaisycarnival.com",
+    age: "18+",
   },
   {
     id: "sandbar-cb",
@@ -543,6 +547,7 @@ export const VENUES: Venue[] = [
     lat: 25.7838,
     lng: -80.1936,
     url: "https://www.clubspace.com",
+    age: "21+",
   },
   {
     id: "space-ground",
@@ -553,6 +558,7 @@ export const VENUES: Venue[] = [
     lat: 25.7836,
     lng: -80.1938,
     url: "https://www.clubspace.com",
+    age: "21+",
   },
   {
     id: "floyd",
@@ -563,6 +569,7 @@ export const VENUES: Venue[] = [
     lat: 25.784,
     lng: -80.1934,
     url: "https://www.clubspace.com",
+    age: "21+",
   },
   {
     id: "e11even",
@@ -573,6 +580,7 @@ export const VENUES: Venue[] = [
     lat: 25.7835,
     lng: -80.1942,
     url: "https://www.11miami.com",
+    age: "21+",
   },
   {
     id: "zeyzey",
@@ -582,6 +590,7 @@ export const VENUES: Venue[] = [
     address: "69 NW 14th St, Miami, FL 33136",
     lat: 25.7886,
     lng: -80.1968,
+    age: "18+",
   },
   {
     id: "jungle-island",
@@ -592,6 +601,7 @@ export const VENUES: Venue[] = [
     lat: 25.7503,
     lng: -80.1878,
     url: "https://www.jungleisland.com",
+    age: "21+",
   },
   {
     id: "factory-town",
@@ -602,6 +612,7 @@ export const VENUES: Venue[] = [
     lat: 25.8075,
     lng: -80.2558,
     url: "https://www.factorytown.com",
+    age: "18+",
   },
 ];
 

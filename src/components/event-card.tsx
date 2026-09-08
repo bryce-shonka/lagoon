@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Bookmark, BookmarkCheck } from "lucide-react";
-import { CATEGORY_LABEL_ONE } from "@/lib/events/types";
+import { CATEGORY_LABEL_ONE, ageExceptionLabel } from "@/lib/events/types";
 import { CATEGORY_ICON } from "@/lib/events/icons";
 import { formatTime, statusFor } from "@/lib/events/query";
 import { formatMiles } from "@/lib/geo";
@@ -20,6 +20,7 @@ export const EventCard = memo(function EventCard({ event, nowMs, today, onOpen }
   const toggleSaved = useAppStore((s) => s.toggleSaved);
   const status = statusFor(event, nowMs, today);
   const Icon = CATEGORY_ICON[event.category];
+  const ageNote = ageExceptionLabel(event.age);
 
   return (
     <div className="group relative flex items-stretch gap-3 border-b border-border py-4 last:border-b-0 md:gap-5">
@@ -44,6 +45,7 @@ export const EventCard = memo(function EventCard({ event, nowMs, today, onOpen }
             <Icon className="size-3.5" aria-hidden />
             {CATEGORY_LABEL_ONE[event.category]}
             {event.subtitle ? ` · ${event.subtitle}` : ""}
+            {ageNote ? ` · ${ageNote}` : ""}
           </p>
           <h3 className="font-display text-xl leading-snug break-words text-fg group-hover:text-accent md:text-2xl">
             {event.title}
