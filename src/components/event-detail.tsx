@@ -82,7 +82,7 @@ export function EventDetail({ event, nowMs, today, onClose }: Props) {
             {shown.venue.neighborhood ? ` · ${shown.venue.neighborhood}` : ""}
             {` · ${shown.venue.city}`}
             {shown.beyondRadius
-              ? ` · ${formatMiles(shown.distanceMiles)} · Orlando drive`
+              ? ` · ${formatMiles(shown.distanceMiles)} · ${shown.venue.city} drive`
               : ` · ${formatMiles(shown.distanceMiles)} from Barefoot Bay`}
           </p>
           <p className="mt-5 max-w-prose text-base leading-relaxed text-fg/90">

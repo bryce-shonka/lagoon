@@ -9,7 +9,7 @@ type Props = {
   feed: Feed;
 };
 
-const FEEDS: Feed[] = ["local", "edm"];
+const FEEDS: Feed[] = ["local", "edm", "miami"];
 
 export function AppHeader({ today, feed }: Props) {
   const setFeed = useAppStore((s) => s.setFeed);
@@ -19,7 +19,11 @@ export function AppHeader({ today, feed }: Props) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div className="min-w-0">
           <p className="text-xs font-medium uppercase tracking-widest text-subtle">
-            {feed === "edm" ? "Orlando house rooms" : "Space & Treasure Coast"}
+            {feed === "miami"
+              ? "Miami house & EDM"
+              : feed === "edm"
+                ? "Orlando house rooms"
+                : "Space & Treasure Coast"}
           </p>
           <h1 className="mt-1 font-display text-5xl italic leading-none text-fg md:text-6xl">
             Lagoon
@@ -40,9 +44,11 @@ export function AppHeader({ today, feed }: Props) {
             ))}
           </div>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-            {feed === "edm"
-              ? "House and dance nights in Orlando — The Vanguard, Celine, Wall Street Plaza, House of Blues, Mango’s. The drive from Barefoot Bay."
-              : `Concerts, live music, street festivals, raves, and farmers markets within ${HOME.radiusMiles} miles of ${HOME.name} (${HOME.zip}).`}
+            {feed === "miami"
+              ? "Club Space, Floyd, The Ground, and the downtown rooms. This weekend is Boys Noize Friday and Joseph Capriati Saturday on the terrace."
+              : feed === "edm"
+                ? "House and dance nights in Orlando — The Vanguard, Celine, Wall Street Plaza, House of Blues, Mango’s. The drive from Barefoot Bay."
+                : `Concerts, live music, street festivals, raves, and farmers markets within ${HOME.radiusMiles} miles of ${HOME.name} (${HOME.zip}).`}
           </p>
         </div>
         <p className="text-sm text-subtle">

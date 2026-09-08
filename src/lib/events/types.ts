@@ -34,11 +34,12 @@ export const CATEGORY_LABEL_ONE: Record<Category, string> = {
   house: "House",
 };
 
-export type Feed = "local" | "edm";
+export type Feed = "local" | "edm" | "miami";
 
 export const FEED_LABEL: Record<Feed, string> = {
   local: "60 miles",
   edm: "House / EDM",
+  miami: "Miami",
 };
 
 export type Venue = {

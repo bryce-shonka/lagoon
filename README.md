@@ -28,30 +28,31 @@ If those keep showing up on the right tab, the calendar is doing its job.
 
 ## Who it’s for
 
-People who live or stay near Barefoot Bay, Micco, Sebastian, Palm Bay, Melbourne, EGAD, the beaches, Vero, and the rest of the 60-mile ring — and who will also drive to Orlando for a house night.
+People who live or stay near Barefoot Bay, Micco, Sebastian, Palm Bay, Melbourne, EGAD, the beaches, Vero, and the rest of the 60-mile ring — and who will also drive to Orlando or Miami for a house night.
 
 ## How to use it
 
-Two tabs under the Lagoon title:
+Three tabs under the Lagoon title:
 
 | Tab | What it shows | Default date |
 | --- | --- | --- |
-| **60 miles** | Concerts, live rooms, street fairs, festivals, markets, and local EDM inside the ring | This weekend |
+| **60 miles** | Concerts, live rooms, street fairs, festivals, markets, and local EDM inside the ring | This weekend (Fri–Sun) |
 | **House / EDM** | Orlando only | All dates |
+| **Miami** | Club Space (Terrace + Ground), Floyd, and downtown Miami house/EDM | This weekend (Fri–Sun) |
 
-**Raves / EDM** (on **60 miles**) covers Sanbar Satellite Beach, Foo Bar Cocoa Beach, Sandbar Cocoa Beach, Debauchery in downtown Melbourne, and any other house or rave listing inside 60 miles. Orlando electronic does **not** appear here.
+**Raves / EDM** (on **60 miles**) covers Sanbar Satellite Beach, Foo Bar Cocoa Beach, Sandbar Cocoa Beach, Debauchery in downtown Melbourne, and any other house or rave listing inside 60 miles. Orlando and Miami electronic do **not** appear here.
 
-On **House / EDM**, style chips are House vs Raves / EDM (for example EDC). There is no city row — every listing is Orlando.
+On **House / EDM** and **Miami**, style chips are House vs Raves / EDM. There is no city row.
 
-On either tab:
+On any tab:
 
-- **When** — today, weekend, this week, or all dates.
+- **When** — today, weekend (Friday–Sunday), this week, or all dates.
 - **Category** chips combine; empty means all in that tab.
 - **Closest city** (60 miles only) is sorted by miles from Barefoot Bay.
 - Tap a listing for time, address, a short note, directions, and tickets or the venue page when there is one.
 - **Save** bookmarks a show on this browser. Saved is a filter, not an account.
 
-Featured at the top is the strongest pick in the current window — a Moon Room night or downtown festival on **60 miles**; an Orlando house bill or EDC week on **House / EDM**.
+Featured at the top is the strongest pick in the current window — a Moon Room night or downtown festival on **60 miles**; an Orlando house bill on **House / EDM**; Club Space on **Miami**.
 
 ## What’s in the data
 
@@ -59,7 +60,9 @@ Dated shows plus recurring weekly rooms and markets (Earl’s Hideaway, Squid Li
 
 **60 miles** cities include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
 
-**House / EDM** venues: The Vanguard, Celine, Wall Street Plaza, House of Blues Orlando (Disney Springs), Mango’s Tropical Café (International Drive), Tinker Field (EDC Orlando). Distance from Barefoot Bay is shown as an Orlando drive.
+**House / EDM** venues: The Vanguard, Celine, Wall Street Plaza, House of Blues Orlando (Disney Springs), Mango’s Tropical Café (International Drive), Tinker Field (EDC Orlando).
+
+**Miami** venues: Club Space (Terrace), The Ground at Club Space, Floyd, E11EVEN, ZeyZey, Jungle Island, Factory Town. Distance is shown as a Miami drive.
 
 ## Run it locally
 

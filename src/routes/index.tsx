@@ -100,9 +100,11 @@ function Home() {
               <div className="rounded-xl border border-border bg-surface p-6">
                 <h2 className="font-display text-2xl text-fg">Nothing in this window</h2>
                 <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted">
-                  {feed === "edm"
-                    ? "No Orlando house or dance nights in this window. Try All dates."
-                    : "No listings match the current filters. Reset, or try All dates for the full 60-mile calendar."}
+                  {feed === "miami"
+                    ? "No Miami house or EDM in this window. Try All dates for later Club Space terrace nights."
+                    : feed === "edm"
+                      ? "No Orlando house or dance nights in this window. Try All dates."
+                      : "No listings match the current filters. Reset, or try All dates for the full 60-mile calendar."}
                 </p>
                 <button
                   type="button"
@@ -138,9 +140,11 @@ function Home() {
         </div>
 
         <footer className="mt-16 border-t border-border pt-6 text-xs leading-relaxed text-subtle">
-          {feed === "edm"
-            ? "House / EDM is Orlando only — rooms outside the 60-mile ring. Local EDM is under Raves / EDM on the 60 miles tab. Times Eastern. Always confirm with the venue before you drive."
-            : "Listings are curated from local venue calendars, downtown associations, and market schedules within 60 miles of Barefoot Bay. Times Eastern. Always confirm with the venue before you drive."}
+          {feed === "miami"
+            ? "Miami is Club Space, Floyd, The Ground, and downtown house/EDM — outside the 60-mile ring. Times Eastern. Always confirm with the room before you go."
+            : feed === "edm"
+              ? "House / EDM is Orlando only — rooms outside the 60-mile ring. Local EDM is under Raves / EDM on the 60 miles tab. Times Eastern. Always confirm with the venue before you drive."
+              : "Listings are curated from local venue calendars, downtown associations, and market schedules within 60 miles of Barefoot Bay. Times Eastern. Always confirm with the venue before you drive."}
         </footer>
       </div>
 

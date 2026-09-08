@@ -55,7 +55,7 @@ export const EventCard = memo(function EventCard({ event, nowMs, today, onOpen }
           </p>
           <p className="mt-0.5 text-xs tabular-nums text-subtle">
             {event.beyondRadius
-              ? `${formatMiles(event.distanceMiles)} · Orlando drive`
+              ? `${formatMiles(event.distanceMiles)} · ${event.venue.city} drive`
               : `${formatMiles(event.distanceMiles)} from Barefoot Bay`}
           </p>
         </div>

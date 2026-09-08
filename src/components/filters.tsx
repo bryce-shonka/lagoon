@@ -55,7 +55,8 @@ export function Filters({ cities, resultCount }: Props) {
     draft.length > 0 ||
     savedOnly;
 
-  const catList: readonly Category[] = feed === "edm" ? EDM_CATEGORIES : LOCAL_CATEGORIES;
+  const catList: readonly Category[] =
+    feed === "edm" || feed === "miami" ? EDM_CATEGORIES : LOCAL_CATEGORIES;
 
   return (
     <div className="flex flex-col gap-4">
@@ -97,7 +98,7 @@ export function Filters({ cities, resultCount }: Props) {
 
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-widest text-subtle">
-          {feed === "edm" ? "Style" : "Category"}
+          {feed === "edm" || feed === "miami" ? "Style" : "Category"}
         </p>
         <div className="flex flex-wrap gap-2">
           {catList.map((c) => {
@@ -147,7 +148,9 @@ export function Filters({ cities, resultCount }: Props) {
         </div>
       ) : (
         <p className="text-xs leading-relaxed text-muted">
-          Orlando only — about 70 miles from Barefoot Bay. Confirm with the room before you drive.
+          {feed === "miami"
+            ? "Miami only — Club Space, Floyd, The Ground, and downtown rooms. About 170 miles from Barefoot Bay. Confirm with the room before you go."
+            : "Orlando only — about 70 miles from Barefoot Bay. Confirm with the room before you drive."}
         </p>
       )}
 

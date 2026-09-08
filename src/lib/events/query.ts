@@ -63,10 +63,12 @@ function weekdayFromYmd(ymd: string): number {
 
 export function weekendRange(today: string): { start: string; end: string } {
   const dow = weekdayFromYmd(today);
-  if (dow === 6) return { start: today, end: addYmd(today, 1) };
+  // Nightlife weekend is Friday–Sunday.
   if (dow === 0) return { start: today, end: today };
-  const toSat = 6 - dow;
-  return { start: addYmd(today, toSat), end: addYmd(today, toSat + 1) };
+  if (dow === 5) return { start: today, end: addYmd(today, 2) };
+  if (dow === 6) return { start: today, end: addYmd(today, 1) };
+  const toFri = 5 - dow;
+  return { start: addYmd(today, toFri), end: addYmd(today, toFri + 2) };
 }
 
 export function weekRange(today: string): { start: string; end: string } {
@@ -87,6 +89,10 @@ export function isLocalEvent(e: EventView): boolean {
 
 export function isOrlandoEvent(e: EventView): boolean {
   return e.venue.city === "Orlando";
+}
+
+export function isMiamiEvent(e: EventView): boolean {
+  return e.venue.city === "Miami" || e.venue.city === "Miami Beach";
 }
 
 export type Filters = {
@@ -119,12 +125,15 @@ export function filterEvents(today: string, filters: Filters): EventView[] {
   const cities = filters.cities.length ? new Set(filters.cities) : null;
   const saved = filters.savedOnly ? new Set(filters.savedIds) : null;
   const edm = filters.feed === "edm";
+  const miami = filters.feed === "miami";
   const list = upcomingFrom(start);
 
   return list.filter((e) => {
     if (e.ymd > end) return false;
     if (edm) {
       if (!isOrlandoEvent(e)) return false;
+    } else if (miami) {
+      if (!isMiamiEvent(e)) return false;
     } else if (!isLocalEvent(e)) {
       return false;
     }
@@ -198,6 +207,8 @@ export function cityChips(today: string, feed: Feed): CityChip[] {
   for (const e of upcomingFrom(today)) {
     if (feed === "edm") {
       if (!isOrlandoEvent(e)) continue;
+    } else if (feed === "miami") {
+      if (!isMiamiEvent(e)) continue;
     } else if (!isLocalEvent(e)) {
       continue;
     }
@@ -253,11 +264,12 @@ export function featuredEvent(events: EventView[], nowMs: number): EventView | u
 }
 
 function rankEvent(e: EventView): number {
-  if (e.venueId === "tinker") return 0;
+  if (e.venueId === "tinker" || e.venueId === "club-space") return 0;
   if (e.category === "house" && e.venue.city === "Orlando" && e.price !== "Cover") return 1;
   if (e.venueId === "pineapples" && (e.category === "concert" || e.category === "festival")) return 2;
   if (e.venueId === "dtmb" && (e.category === "street" || e.category === "festival")) return 3;
   if (e.category === "concert" && e.price !== "Free") return 4;
+  if (e.venueId === "space-ground" || e.venueId === "floyd") return 4;
   if (e.category === "house") return 5;
   if (e.category === "festival") return 6;
   if (e.category === "street") return 7;
