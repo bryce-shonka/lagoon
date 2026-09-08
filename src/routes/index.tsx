@@ -126,7 +126,7 @@ function Home() {
                         <EventCard
                           key={event.id}
                           event={event}
-                          nowMs={event.ymd === today ? nowMs : event.startMs}
+                          nowMs={nowMs}
                           today={today}
                           onOpen={setSelectedId}
                         />
