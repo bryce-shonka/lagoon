@@ -65,7 +65,7 @@ Featured at the top is the strongest pick in the current window — a Moon Room 
 
 Dated shows plus recurring weekly rooms that are a format, not a missing band name (Sanbar Saturday EDM, Foo Bar, Debauchery). A live-music night is listed only when the band is named. Earl’s, Captain Hiram’s, Tiki Bar & Grill, Squid Lips EGAD, Lou’s Blues, and Heidi’s Jazz Club use the venue calendars. If a room has not posted the act, that night is left off rather than shown as “live music.”
 
-**60 miles** cities include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
+**60 miles** cities include Sebastian, Palm Bay, Melbourne (including EGAD: Pineapples and Squid Lips), Indialantic, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
 
 **Air shows** is a category on the 60-mile tab. Upcoming: Salute to America in Space at the Kennedy Space Center runway (Nov 7–8, Thunderbirds) and the Stuart Air Show at Witham Field (Nov 13–15). Shows outside 60 miles are not listed.
 

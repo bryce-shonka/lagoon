@@ -4,13 +4,12 @@ export const VENUES: Venue[] = [
   {
     id: "pineapples",
     name: "Pineapples",
-    city: "Eau Gallie",
+    city: "Melbourne",
     neighborhood: "EGAD",
     address: "1434 Pineapple Ave, Melbourne, FL 32935",
     lat: 28.1325,
     lng: -80.6309,
     url: "https://pineapplesegad.com",
-    age: "21+",
   },
   {
     id: "king-center",
@@ -24,7 +23,7 @@ export const VENUES: Venue[] = [
   {
     id: "squid-lips-egad",
     name: "Squid Lips",
-    city: "Eau Gallie",
+    city: "Melbourne",
     neighborhood: "EGAD",
     address: "1477 Pineapple Ave, Melbourne, FL 32935",
     lat: 28.1334,
@@ -283,7 +282,7 @@ export const VENUES: Venue[] = [
   {
     id: "intracoastal",
     name: "Intracoastal Brewing Company",
-    city: "Eau Gallie",
+    city: "Melbourne",
     neighborhood: "EGAD",
     address: "652 W Eau Gallie Blvd, Melbourne, FL 32935",
     lat: 28.129,
@@ -419,7 +418,7 @@ export const VENUES: Venue[] = [
   {
     id: "egad",
     name: "Eau Gallie Arts District",
-    city: "Eau Gallie",
+    city: "Melbourne",
     neighborhood: "EGAD",
     address: "Pineapple Ave, Melbourne, FL 32935",
     lat: 28.132,
