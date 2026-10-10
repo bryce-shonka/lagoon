@@ -67,7 +67,7 @@ Dated shows plus recurring weekly rooms and markets. Recurring rows skip dates t
 
 **60 miles** cities include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
 
-Sebastian river rooms: Captain Hiram’s Sandbar (1606 Indian River Dr), Tiki Bar & Grill (1130 Indian River Dr), Earl’s Hideaway, Squid Lips Sebastian.
+Sebastian river rooms: Captain Hiram’s Sandbar (1606 Indian River Dr), Tiki Bar & Grill (1130 Indian River Dr), Earl’s Hideaway (1405 Indian River Dr), Squid Lips Sebastian. Named bills from the venue calendars replace the generic “live music” row on those nights.
 
 **House / EDM** venues: The Vanguard, Celine, Wall Street Plaza, House of Blues Orlando (Disney Springs), Mango’s Tropical Café (International Drive), Tinker Field (EDC Orlando).
 

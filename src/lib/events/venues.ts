@@ -53,9 +53,10 @@ export const VENUES: Venue[] = [
     id: "earls",
     name: "Earl's Hideaway Lounge",
     city: "Sebastian",
-    address: "1585 Indian River Dr, Sebastian, FL 32958",
+    address: "1405 Indian River Dr, Sebastian, FL 32958",
     lat: 27.8169,
     lng: -80.4705,
+    url: "https://earlshideaway.com/events",
   },
   {
     id: "hirams",
