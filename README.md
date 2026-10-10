@@ -63,7 +63,7 @@ Featured at the top is the strongest pick in the current window — a Moon Room 
 
 ## What’s in the data
 
-Dated shows plus recurring weekly rooms and markets. Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
+Dated shows plus recurring weekly rooms that are a format, not a missing band name (Sanbar Saturday EDM, Foo Bar, Debauchery). A live-music night is listed only when the band is named. Earl’s, Captain Hiram’s, Tiki Bar & Grill, Squid Lips EGAD, Lou’s Blues, and Heidi’s Jazz Club use the venue calendars. If a room has not posted the act, that night is left off rather than shown as “live music.”
 
 **60 miles** cities include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
 
