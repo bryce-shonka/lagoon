@@ -2048,6 +2048,79 @@ const DATED: EventItem[] = [
     description: "Friday night at Tiki Bar & Grill, Sebastian. Soul Shot on the Indian River.",
     url: "https://sebastiantiki.com",
   },
+  {
+    id: "ksc-air-1107",
+    title: "Salute to America in Space",
+    subtitle: "Thunderbirds",
+    category: "airshow",
+    start: iso("2026-11-07", "09:00"),
+    end: iso("2026-11-07", "16:00"),
+    venueId: "slf-ksc",
+    price: "$45+",
+    age: "all",
+    description:
+      "Air show on the Shuttle Landing Facility at Kennedy Space Center, the flying park of NASA’s MAX POWER weekend. USAF Thunderbirds, Army Golden Knights, and NASA flyovers. Gates 9 a.m., flying about noon–4 p.m. This ticket is not Visitor Complex admission — enter from Titusville through the North Gate. All ages.",
+    url: "https://www.nasa.gov/maxpower/",
+  },
+  {
+    id: "ksc-air-1108",
+    title: "Salute to America in Space",
+    subtitle: "Thunderbirds",
+    category: "airshow",
+    start: iso("2026-11-08", "09:00"),
+    end: iso("2026-11-08", "16:00"),
+    venueId: "slf-ksc",
+    price: "$45+",
+    age: "all",
+    description:
+      "Sunday of Salute to America in Space at the Kennedy Space Center runway. Thunderbirds and NASA flyovers, about noon–4 p.m. Separate ticket from the Visitor Complex. All ages.",
+    url: "https://www.nasa.gov/maxpower/",
+  },
+  {
+    id: "stuart-air-1113",
+    title: "Stuart Air Show",
+    subtitle: "Twilight show",
+    category: "airshow",
+    start: iso("2026-11-13", "16:00"),
+    end: iso("2026-11-13", "22:00"),
+    venueId: "witham",
+    price: "$15–40",
+    age: "all",
+    ticketsUrl: "https://www.showpass.com/site/stuart-air-show/tickets-2026/",
+    description:
+      "Friday twilight air show at Witham Field. Gates 4 p.m., flying around 5, then fireworks and a drone show. F-16, C-17, warbirds, and aerobatic acts across the weekend. All ages. Parking included.",
+    url: "https://www.stuartairshow.com",
+  },
+  {
+    id: "stuart-air-1114",
+    title: "Stuart Air Show",
+    subtitle: "Witham Field",
+    category: "airshow",
+    start: iso("2026-11-14", "09:00"),
+    end: iso("2026-11-14", "17:00"),
+    venueId: "witham",
+    price: "$15–40",
+    age: "all",
+    ticketsUrl: "https://www.showpass.com/site/stuart-air-show/tickets-2026/",
+    description:
+      "Saturday at the Stuart Air Show, Witham Field. Gates 9 a.m., opening about 11:30 a.m., done by 5. Military demos, warbirds, and aerobatics. All ages.",
+    url: "https://www.stuartairshow.com",
+  },
+  {
+    id: "stuart-air-1115",
+    title: "Stuart Air Show",
+    subtitle: "Veterans Day",
+    category: "airshow",
+    start: iso("2026-11-15", "09:00"),
+    end: iso("2026-11-15", "17:00"),
+    venueId: "witham",
+    price: "$15–40",
+    age: "all",
+    ticketsUrl: "https://www.showpass.com/site/stuart-air-show/tickets-2026/",
+    description:
+      "Sunday of the Stuart Air Show is Veterans Appreciation Day at Witham Field. Gates 9 a.m., ceremony about 11:30 a.m., flying through the afternoon. All ages.",
+    url: "https://www.stuartairshow.com",
+  },
 ];
 
 type RecurringSpec = {
@@ -2544,7 +2617,7 @@ function expandRecurring(): EventItem[] {
 function resolveAge(item: EventItem, venue: Venue): AgePolicy | undefined {
   if (item.age) return item.age;
   if (venue.age) return venue.age;
-  if (item.category === "market" || item.category === "street") return "all";
+  if (item.category === "market" || item.category === "street" || item.category === "airshow") return "all";
   if (item.category === "house" || item.category === "rave") return "21+";
   return undefined;
 }

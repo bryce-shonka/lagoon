@@ -271,7 +271,7 @@ function rankEvent(e: EventView): number {
   if (e.category === "concert" && e.price !== "Free") return 4;
   if (e.venueId === "space-ground" || e.venueId === "floyd") return 4;
   if (e.category === "house") return 5;
-  if (e.category === "festival") return 6;
+  if (e.category === "festival" || e.category === "airshow") return 6;
   if (e.category === "street") return 7;
   if (e.category === "rave") return 8;
   if (e.category === "concert") return 9;

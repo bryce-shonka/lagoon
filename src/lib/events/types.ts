@@ -5,6 +5,7 @@ export const CATEGORIES = [
   "street",
   "rave",
   "market",
+  "airshow",
   "house",
 ] as const;
 
@@ -21,6 +22,7 @@ export const CATEGORY_LABEL: Record<Category, string> = {
   street: "Street fairs",
   rave: "Raves / EDM",
   market: "Farmers markets",
+  airshow: "Air shows",
   house: "House",
 };
 
@@ -31,6 +33,7 @@ export const CATEGORY_LABEL_ONE: Record<Category, string> = {
   street: "Street fair",
   rave: "Rave / EDM",
   market: "Farmers market",
+  airshow: "Air show",
   house: "House",
 };
 

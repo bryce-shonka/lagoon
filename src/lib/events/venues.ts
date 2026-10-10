@@ -635,6 +635,27 @@ export const VENUES: Venue[] = [
     url: "https://www.factorytown.com",
     age: "18+",
   },
+  {
+    id: "slf-ksc",
+    name: "Launch and Landing Facility",
+    city: "Merritt Island",
+    neighborhood: "Kennedy Space Center",
+    address: "Shuttle Landing Facility, Kennedy Space Center, FL 32899",
+    lat: 28.615,
+    lng: -80.6945,
+    url: "https://www.nasa.gov/maxpower/",
+    age: "all",
+  },
+  {
+    id: "witham",
+    name: "Witham Field",
+    city: "Stuart",
+    address: "1895 SE Flying Fortress Ln, Stuart, FL 34996",
+    lat: 27.1818,
+    lng: -80.221,
+    url: "https://www.stuartairshow.com",
+    age: "all",
+  },
 ];
 
 export const VENUE_BY_ID: Record<string, Venue> = Object.fromEntries(

@@ -37,7 +37,7 @@ Three tabs under the Lagoon title:
 
 | Tab | What it shows | Default date |
 | --- | --- | --- |
-| **60 miles** | Concerts, live rooms, street fairs, festivals, markets, and local EDM inside the ring | This weekend (Fri–Sun) |
+| **60 miles** | Concerts, live rooms, street fairs, festivals, air shows, markets, and local EDM inside the ring | This weekend (Fri–Sun) |
 | **House / EDM** | Orlando only | All dates |
 | **Miami** | Club Space (Terrace + Ground), Floyd, and downtown Miami house/EDM | This weekend (Fri–Sun) |
 
@@ -66,6 +66,8 @@ Featured at the top is the strongest pick in the current window — a Moon Room 
 Dated shows plus recurring weekly rooms and markets. Recurring rows skip dates that already have a named bill so you don’t see “live music” and the actual concert on the same night.
 
 **60 miles** cities include Sebastian, Palm Bay, Melbourne, Indialantic, Eau Gallie, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
+
+**Air shows** is a category on the 60-mile tab. Upcoming: Salute to America in Space at the Kennedy Space Center runway (Nov 7–8, Thunderbirds) and the Stuart Air Show at Witham Field (Nov 13–15). Shows outside 60 miles are not listed.
 
 Sebastian river rooms: Captain Hiram’s Sandbar (1606 Indian River Dr), Tiki Bar & Grill (1130 Indian River Dr), Earl’s Hideaway (1405 Indian River Dr), Squid Lips Sebastian. Named bills from the venue calendars replace the generic “live music” row on those nights.
 
