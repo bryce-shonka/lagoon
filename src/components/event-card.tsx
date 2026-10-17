@@ -29,6 +29,17 @@ export const EventCard = memo(function EventCard({ event, nowMs, today, onOpen }
         onClick={() => onOpen(event.id)}
         className="flex min-w-0 flex-1 touch-manipulation items-start gap-3 text-left md:gap-5"
       >
+        {event.image ? (
+          <img
+            src={event.image}
+            alt=""
+            width={64}
+            height={64}
+            loading="lazy"
+            decoding="async"
+            className="size-16 shrink-0 rounded-md object-cover"
+          />
+        ) : null}
         <div className="w-16 shrink-0 pt-0.5 md:w-20">
           <p className="text-sm tabular-nums text-fg">{formatTime(event.startMs)}</p>
           {status === "now" ? (

@@ -1,6 +1,7 @@
 import { HOME, haversineMiles } from "@/lib/geo";
 import type { AgePolicy, Category, EventItem, EventView, Venue } from "./types";
 import { VENUE_BY_ID } from "./venues";
+import { actProfile } from "./repertoire";
 
 function offsetFor(ymd: string): "-04:00" | "-05:00" {
   return ymd >= "2026-11-01" ? "-05:00" : "-04:00";
@@ -3343,6 +3344,7 @@ function toView(item: EventItem): EventView | null {
   if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) return null;
   if (endMs < startMs) endMs = startMs + 3 * 60 * 60 * 1000;
   const age = resolveAge(item, venue);
+  const profile = actProfile(item.title, item.category);
   return {
     ...item,
     venue,
@@ -3351,8 +3353,10 @@ function toView(item: EventItem): EventView | null {
     endMs,
     ymd: item.start.slice(0, 10),
     age,
+    styles: profile?.styles,
+    image: profile?.image,
     searchHay:
-      `${item.title} ${item.subtitle ?? ""} ${item.category} ${venue.name} ${venue.city} ${venue.neighborhood ?? ""} ${item.description} ${age ?? ""}`.toLowerCase(),
+      `${item.title} ${item.subtitle ?? ""} ${item.category} ${profile?.styles ?? ""} ${venue.name} ${venue.city} ${venue.neighborhood ?? ""} ${item.description} ${age ?? ""}`.toLowerCase(),
   };
 }
 

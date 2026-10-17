@@ -73,6 +73,23 @@ export function EventDetail({ event, nowMs, today, onClose }: Props) {
           {shown.subtitle ? (
             <p className="mt-1 text-base text-muted">{shown.subtitle}</p>
           ) : null}
+          {shown.image ? (
+            <img
+              src={shown.image}
+              alt=""
+              width={640}
+              height={360}
+              className="mt-4 aspect-[16/9] w-full rounded-lg object-cover"
+            />
+          ) : null}
+          {shown.styles ? (
+            <p className="mt-4 text-sm leading-relaxed text-fg">
+              <span className="mb-1 block text-xs font-medium uppercase tracking-widest text-subtle">
+                Repertoire
+              </span>
+              {shown.styles}
+            </p>
+          ) : null}
           <p className="mt-4 text-sm text-fg">
             {formatDayLabel(shown.ymd)}
             <span className="text-muted"> · {formatTimeRange(shown)}</span>

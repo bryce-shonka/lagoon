@@ -95,6 +95,8 @@ export type EventView = EventItem & {
   endMs: number;
   ymd: string;
   searchHay: string;
+  styles?: string;
+  image?: string;
 };
 
 export type WhenFilter = "today" | "weekend" | "week" | "all";

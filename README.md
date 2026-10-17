@@ -63,7 +63,7 @@ Featured at the top is the strongest pick in the current window — a Moon Room 
 
 ## What’s in the data
 
-Dated shows plus recurring weekly rooms that are a format, not a missing band name (Sanbar Saturday EDM, Foo Bar, Debauchery). A live-music night is listed only when the band is named. Earl’s, Captain Hiram’s, Tiki Bar & Grill, Squid Lips EGAD, Lou’s Blues, and Heidi’s Jazz Club use the venue calendars. If a room has not posted the act, that night is left off rather than shown as “live music.”
+Tap a band for its repertoire — styles and decades, such as Beatles, 1960s–70s classic rock, blues, or house. Listings with a verified photo show it on the row and again in the detail.
 
 **60 miles** cities include Sebastian, Palm Bay, Melbourne (including EGAD: Pineapples and Squid Lips), Indialantic, Indian Harbour Beach, Vero Beach, Satellite Beach, Suntree, Viera, Cocoa Beach, Cocoa, Fort Pierce, Merritt Island, Cape Canaveral, Port St. Lucie, Jensen Beach, Titusville, and Stuart.
 

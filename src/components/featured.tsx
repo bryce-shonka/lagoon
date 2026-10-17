@@ -34,6 +34,15 @@ export function Featured({ event, nowMs, today, onOpen }: Props) {
       </p>
       <h2 className="font-display text-3xl leading-tight break-words text-fg md:text-4xl">{event.title}</h2>
       {event.subtitle ? <p className="mt-1 text-base text-muted">{event.subtitle}</p> : null}
+      {event.image ? (
+        <img
+          src={event.image}
+          alt=""
+          width={640}
+          height={360}
+          className="mt-4 aspect-[16/9] w-full rounded-lg object-cover"
+        />
+      ) : null}
       <p className="mt-3 text-sm text-fg">
         {formatDayLabel(event.ymd)}
         <span className="text-muted"> · {formatTimeRange(event)}</span>
